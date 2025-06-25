@@ -127,19 +127,10 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16.0),
-                CustomElevatedButton(text: "login", onPressed: (){}),
-                ElevatedButton(
-                  onPressed: () {
-                    // Add login logic here
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.lightGreen,
-                    foregroundColor: Colors.black87,
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  ),
-                  child: const Text('Login'),
-                ),
-
+                CustomElevatedButton(text: "login", onPressed: (){}, imagePath: 'assets/icons/buttons.svg',),
+             
+              
+              
                 const SizedBox(height: 24.0),
 
                 // OR divider

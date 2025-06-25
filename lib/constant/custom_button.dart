@@ -1,76 +1,46 @@
 import 'package:flutter/material.dart';
-import 'package:my_bookey/constant/custom_button_design.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomElevatedButton extends StatelessWidget {
+  final String imagePath;
   final String text;
-  final VoidCallback onPressed;
-  final Color? backgroundColor;
-  final Color? textColor;
-  final double? elevation;
-  final EdgeInsetsGeometry? padding;
-  final double? borderRadius;
-  final double? width;
-  final double? height;
-  final Widget? icon;
-  final bool isLoading;
+  final VoidCallback onPressed; 
 
   const CustomElevatedButton({
-    Key? key,
+    required this.imagePath,
     required this.text,
-    required this.onPressed,
-    this.backgroundColor,
-    this.textColor,
-    this.elevation,
-    this.padding,
-    this.borderRadius,
-    this.width,
-    this.height,
-    this.icon,
-    this.isLoading = false,
+    required this.onPressed, 
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    return GestureDetector(
+      onTap: (){
 
-    return SizedBox(
-      width: width,
-      height: height,
-      child: CustomPaint(
-        painter: CustomButtonDesign(),
-        child: ElevatedButton(
-          onPressed: isLoading ? null : onPressed,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: backgroundColor ?? theme.primaryColor,
-            foregroundColor: textColor ?? theme.colorScheme.onPrimary,
-            elevation: elevation ?? 2,
-            padding: padding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderRadius ?? 8),
-            ),
-          ),
-          child: isLoading
-              ? const CircularProgressIndicator(
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-          )
-              : icon != null
-              ? Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              icon!,
-              const SizedBox(width: 8),
-              Text(
-                text,
-                style: theme.textTheme.labelLarge?.copyWith(
-                  color: textColor ?? theme.colorScheme.onPrimary,
-                ),
-              ),
-            ],
-          )
-              : Text(
+      },
+      child: Container(
+        width: 300,
+        height: 55,
+        
+      decoration: const BoxDecoration( 
+        image:  DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage("assets/icons/buttonsimage.png",))),
+        child: Center(
+          child: Text(
             text,
-            style: theme.textTheme.labelLarge?.copyWith(
-              color: textColor ?? theme.colorScheme.onPrimary,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: Colors.black.withOpacity(0.5),
+                  blurRadius: 2,
+                  offset: const Offset(1, 1),
+                ),
+              ],
             ),
           ),
         ),

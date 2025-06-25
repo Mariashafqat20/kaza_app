@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_bookey/view/auth/home/HomeScreen.dart';
+import 'package:get/get.dart';
+import 'package:my_bookey/constant/custom_button.dart';
+import 'package:my_bookey/screens/home/HomeScreen.dart';
 import 'login_screen.dart';
-
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -10,7 +11,6 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
       ),
@@ -31,7 +31,7 @@ class SignupScreen extends StatelessWidget {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>  HomeScreen(),
+                              builder: (context) => HomeScreen(),
                             ),
                           );
                         },
@@ -47,7 +47,6 @@ class SignupScreen extends StatelessWidget {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () {
-
                           // Already on signup screen, do nothing or refresh
                         },
                         style: ElevatedButton.styleFrom(
@@ -121,36 +120,15 @@ class SignupScreen extends StatelessWidget {
                   obscureText: true,
                 ),
                 const SizedBox(height: 24.0),
-                ElevatedButton(
+                CustomElevatedButton(
+                  text: "Signup",
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>  HomeScreen(),
-                      ),
-                    );
-                    // Add signup logic here
+                    Get.to(()=>const HomeScreen());
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.lightGreen,
-                    foregroundColor: Colors.black87,
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  ),
-                  child: const Text('Sign Up'),
+                  imagePath: 'assets/icons/buttons.svg',
                 ),
 
                 const SizedBox(height: 32.0),
-
-                // OR divider
-
-
-
-                // Social signup buttons
-
-
-
-
-
               ],
             ),
           ),
@@ -159,4 +137,3 @@ class SignupScreen extends StatelessWidget {
     );
   }
 }
-

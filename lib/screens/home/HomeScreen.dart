@@ -1,12 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:my_bookey/view/auth/home/Dashboard.dart';
-import 'package:my_bookey/view/auth/home/SearchScreen.dart';
-import 'package:my_bookey/view/auth/home/SettingScreen.dart';
-import 'package:my_bookey/view/auth/login_screen.dart';
-import 'package:my_bookey/view/auth/signup_screen.dart';
-import 'package:my_bookey/view/auth/splash/login_screen.dart';
-import 'package:my_bookey/view/auth/splash/signup_screen.dart';
+import 'package:my_bookey/screens/home/Dashboard.dart';
+import 'package:my_bookey/screens/home/SearchScreen.dart';
+import 'package:my_bookey/screens/home/SettingScreen.dart'; 
+import 'package:my_bookey/screens/auth/login_screen.dart';
+import 'package:my_bookey/screens/auth/signup_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

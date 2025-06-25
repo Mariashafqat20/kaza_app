@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_bookey/view/auth/splash/login_screen.dart';
-import 'screens/login_screen.dart';
+import 'package:get/get.dart';
+import 'package:my_bookey/screens/auth/login_screen.dart'; 
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( debugShowCheckedModeBanner: false,
+    return GetMaterialApp( debugShowCheckedModeBanner: false,
       title: 'Auth App',
       theme: ThemeData(
         primarySwatch: Colors.pink,
